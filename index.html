@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Sales Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Sales Assistant</h1>
+        </header>
+
+        <div class="api-key-section">
+            <div class="api-key-status">
+                <span id="apiKeyStatus">API Key: Not Set</span>
+            </div>
+            <input type="password" id="apiKeyInput" placeholder="Enter OpenRouter API Key">
+            <button id="saveApiKey">Save API Key</button>
+            <button id="resetApiKey" class="danger-btn">Reset API Key</button>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <select id="languageSelect">
+                    <option value="en">English</option>
+                    <option value="my">Bahasa Malaysia</option>
+                </select>
+                
+                <textarea id="productDetails" placeholder="Enter product details here..."></textarea>
+                
+                <button id="generateBtn">Generate Conversation</button>
+            </div>
+
+            <div class="progress-container" style="display: none;">
+                <div class="progress-bar"></div>
+            </div>
+
+            <div class="output-section">
+                <div class="output-controls">
+                    <button id="copyBtn">Copy to Clipboard</button>
+                    <button id="downloadBtn">Download Text</button>
+                </div>
+                <div id="outputText" class="chat-container"></div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 Hanafihassan.com. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

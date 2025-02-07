@@ -1,0 +1,251 @@
+:root {
+    --primary-bg: #1a1a1a;
+    --secondary-bg: #2d2d2d;
+    --text-color: #ffffff;
+    --accent-color: #4CAF50;
+    --error-color: #ff4444;
+    --success-color: #00C851;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.api-key-section {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.api-key-status {
+    flex: 1 1 100%;
+    margin-bottom: 10px;
+}
+
+.api-key-status span {
+    padding: 5px 10px;
+    border-radius: 3px;
+    background-color: var(--secondary-bg);
+    font-size: 0.9em;
+}
+
+.api-key-status span.active {
+    background-color: var(--success-color);
+}
+
+input[type="password"],
+textarea,
+select {
+    background-color: var(--secondary-bg);
+    border: 1px solid #444;
+    color: var(--text-color);
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.progress-container {
+    width: 100%;
+    height: 20px;
+    background-color: var(--secondary-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.output-section {
+    background-color: var(--secondary-bg);
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.output-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.output-text {
+    white-space: pre-wrap;
+    font-family: monospace;
+    padding: 15px;
+    background-color: var(--primary-bg);
+    border-radius: 5px;
+    min-height: 200px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 1px solid #444;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .api-key-section {
+        flex-direction: column;
+    }
+    
+    .output-controls {
+        flex-direction: column;
+    }
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    color: white;
+    animation: slideIn 0.3s ease-out;
+    z-index: 1000;
+}
+
+.notification.success {
+    background-color: var(--success-color);
+}
+
+.notification.error {
+    background-color: var(--error-color);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.chat-container {
+    padding: 15px;
+    background-color: var(--primary-bg);
+    border-radius: 5px;
+    min-height: 200px;
+    overflow-y: auto;
+}
+
+.chat-message {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.chat-message.seller {
+    justify-content: flex-end;
+}
+
+.chat-bubble {
+    max-width: 70%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    position: relative;
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-message.buyer .chat-bubble {
+    background-color: var(--secondary-bg);
+    border-bottom-left-radius: 5px;
+}
+
+.chat-message.seller .chat-bubble {
+    background-color: var(--accent-color);
+    border-bottom-right-radius: 5px;
+}
+
+.chat-label {
+    font-size: 0.8em;
+    margin-bottom: 4px;
+    opacity: 0.7;
+}
+
+.danger-btn {
+    background-color: var(--error-color);
+}
+
+.message-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    margin-top: 5px;
+    opacity: 0.7;
+}
+
+.copy-message {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    padding: 2px 5px;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.copy-message:hover {
+    opacity: 1;
+} 
